@@ -1,14 +1,13 @@
-#include <stdio.h>
-#include <string.h> // 문자열 관련 함수
+#include <iostream>
+#include <string> // std::string이 들어있음 (.h X)
 
 int main(void) {
 
-	char str[30] = { 0, };
-	char str2[30] = "c_insert";
+	std::string str1;
+	std::string str2 = "C++_insert";
 
-	strcpy(str, str2); // str에다가 str2에 있는 문자열을 넣겠음
-
-	printf("%s \n", str);
+	str1 = str2; // 대행연산자로 문자열 복사가 가능
+	std::cout << str1 << std::endl;
 
 	return 0;
 }
