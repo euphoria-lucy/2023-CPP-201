@@ -10,6 +10,6 @@ int main(void) {
 		size++;
 	}
 
-	printf("문자열의 길이 : %d \n", size);
+	printf("문자열의 길이 : %d \n", strlen(str));
 	return 0;
 }
