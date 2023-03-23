@@ -6,12 +6,15 @@
 #include <iostream>
 #include <string>
 
-int main(void) {
-	char str1[30] = "LIMSUNGJIN ";
-	char str2[30] = "PARKSUNGHAN";
+using namespace std;
 
-	strcat(str1, str2);
-	printf("%s \n", str1);
+int main(void) {
+	string str1 = "LIMSUNGJIN ";
+	string str2 = "PARKSUNGHAN";
+
+	str1 = str1 + str2;
+
+	cout << str1 << endl;
 
 	return 0;
 }
