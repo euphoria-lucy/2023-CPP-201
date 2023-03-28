@@ -10,18 +10,18 @@ using namespace std;
 
 int main(void) {
 	
-	char str1[50] = "LIMSUNGJIN";
-	char str2[50] = "PARKSUNGHAN";
+	// C++ String → 편리함
+	// str2가 str1보다 사전(dictionary)에 더 늦게 나옴
+	string str1 = "LIMSUNGJIN";
+	string str2 = "PARKSUNGHAN";
 
-	// 함수 인자 위치와 결과값(-1, 1)이 헷갈려
-	int result = strcmp(str1, str2);
-	if (result == -1) {
-		printf("str2 > str1");
-	} else if (result == 1){
-		printf("str1 > str2");
+	if (str2 > str1) {
+		cout << "str2 > str1";
+	} else if (str1 > str2){
+		cout << "str1 > str2";
 	}
-	else if (result == 0) {
-		printf("str1 == str2");
+	else {
+		cout << "str1 == str2";
 	}
 
 	return 0;
