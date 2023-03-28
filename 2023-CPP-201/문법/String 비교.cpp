@@ -13,34 +13,15 @@ int main(void) {
 	char str1[50] = "LIMSUNGJIN";
 	char str2[50] = "PARKSUNGHAN";
 
-	const int s1_length = strlen(str1);
-	const int s2_length = strlen(str2);
-
-	// s1_length와 s2_length 중에서 작은 값을 선택
-	const int length = s1_length < s2_length ? s1_length : s2_length;
-
-	int i;
-	for (i = 0; i < 1; i++) {
-		if (str1[i] < str2[i]) {
-			printf("str2 < str1 \n");
-			break;
-		}
-		else if (str1[i] > str2[i]) {
-			printf("str1 > str2 \n");
-			break;
-		}
+	// 함수 인자 위치와 결과값(-1, 1)이 헷갈려
+	int result = strcmp(str1, str2);
+	if (result == -1) {
+		printf("str2 > str1");
+	} else if (result == 1){
+		printf("str1 > str2");
 	}
-
-	if (i == length) {
-		if (s1_length > s2_length) {
-			printf("str2 > str1 \n");
-		}
-		else if (s1_length < s2_length) {
-			printf("str2 < str1 \n");
-		}
-		else {
-			printf("str2 == str1 \n");
-		}
+	else if (result == 0) {
+		printf("str1 == str2");
 	}
 
 	return 0;
