@@ -29,7 +29,7 @@ public:
 int main(void) {
 	
 	// (struct Student) : 자료형 (C++에서는 Student만 써도 됨)
-	Student information; // CLASS할 때 class 제외하고 코드 작성
+	class Student information;
 	information.name = "임성진";
 	information.grade = 990111;
 	information.age = 25;
