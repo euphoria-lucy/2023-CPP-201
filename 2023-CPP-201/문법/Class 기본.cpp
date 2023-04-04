@@ -15,16 +15,23 @@ public:
 	// Student(){} → 생성자
 
 	Student() {
-		name = "임성진";
-		grade = 990111;
-		age = 25;
-		gender = 0;
-		department = "스포츠과학과 (배구)";
+	}
+
+	Student(string _name, int _grade, int _age, int _gender, string _department) {
+		name = _name;
+		grade = _grade;
+		age = _age;
+		gender = _gender;
+		department = _department;
 	}
 
 	// class는 멤버변수를 가질 수 있음
 	void print(void) {
-		cout << "이름 : " << name << ", 학번 : " << grade << ", 나이 : " << age << ", 성별 : " << gender << ", 학과 : " << department << endl;
+		cout << "이름 : " << name << endl;
+		cout << "학번 : " << grade << endl;
+		cout << "나이 : " << age << endl;
+		cout << "성별 : " << gender << endl;
+		cout << "학과 : " << department<< endl;
 	}
 
 private:
@@ -45,7 +52,7 @@ int main(void) {
 	
 	// (struct Student) : 자료형 (C++에서는 Student만 써도 됨)
 	// Student information = Student infromation = Student();
-	Student information = Student(); // CLASS할 때 class 제외하고 코드 작성
+	Student information = Student("임성진", 990111, 25, 0, "스포츠과학과(배구)"); // CLASS할 때 class 제외하고 코드 작성
 
 	information.print();
 
