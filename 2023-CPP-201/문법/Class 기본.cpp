@@ -62,7 +62,7 @@ int main(void) {
 	LSJ.height = &h;
 	LSJ.weight = 85;
 
-	cout << "키 : " << LSJ.height << endl; // height가 포인터라 주소값이 출력됨
+	cout << "키 : " << *(LSJ.height) << endl; // height가 포인터라 주소값이 출력됨
 	cout << "몸무게 : " << LSJ.weight << endl;
 
 	information.print();
