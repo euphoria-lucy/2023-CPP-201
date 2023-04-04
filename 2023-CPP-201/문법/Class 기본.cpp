@@ -19,6 +19,10 @@ public:
 	int gender;
 	string department;
 
+	// 생성자 (constructor) : 객체가 생성될 때 호출되는 함수
+	// 생성자를 정의하지 않으면 default(자동)로 매개변수가 없는 생성자가 정의됨
+	// Student(){} → 생성자
+
 	// class는 멤버변수를 가질 수 있음
 	void print(void) {
 		cout << "이름 : " << name << ", 학번 : " << grade << ", 나이 : " << age << ", 성별 : " << gender << ", 학과 : " << department << endl;
