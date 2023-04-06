@@ -57,9 +57,10 @@ int main(void)
 	// stu1.print();
 
 	// 동적할당
-	// TODO : 동적할당 해제하기
 	Student* stu2 = new Student("박성한", 980330, 25, 0, "스포츠과학과 (야구)");
 	stu2->print();
+
+	delete stu2;
 
 	return 0;
 }
