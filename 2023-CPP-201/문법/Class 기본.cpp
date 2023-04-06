@@ -23,13 +23,13 @@ public:
 		department = "스포츠과학과(배구)";
 	}
 
-	Student(string _name, int _hakbun, int _age, int _sex, string _department)
+	Student(string name, int hakbun, int age, int sex, string department)
 	{
-		hakbun = _hakbun;
-		name = _name;
-		age = _age;
-		sex = _sex;
-		department = _department;
+		this->hakbun = hakbun;
+		this->name = name;
+		this->age = age;
+		this->sex = sex;
+		this->department = department;
 	}
 
 	// class는 멤버변수를 가질 수 있다
