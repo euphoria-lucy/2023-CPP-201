@@ -52,8 +52,14 @@ private:
 
 int main(void)
 {
-	Student stu1 = Student("임성진", 990111, 25, 0, "스포츠과학과 (배구)");
-	stu1.print();
+	// 정적할당
+	Student stu1 = Student("임성진", 990111, 24, 0, "스포츠과학과 (배구)");
+	// stu1.print();
+
+	// 동적할당
+	// TODO : 동적할당 해제하기
+	Student* stu2 = new Student("박성한", 980330, 25, 0, "스포츠과학과 (야구)");
+	stu2->print();
 
 	return 0;
 }
