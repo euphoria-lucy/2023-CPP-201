@@ -56,11 +56,27 @@ int main(void)
 	Student stu1 = Student("임성진", 990111, 24, 0, "스포츠과학과 (배구)");
 	// stu1.print();
 
+	Student stu3[2];
+	for (int i = 0; i < 2; i++) {
+		stu3[i].print();
+		printf("\n");
+	}
+
 	// 동적할당 : 메모리의 크기가 실행할 때(runtime) 결정됨 heap 영역
+	// C++의 동적할당은 반드시 delete로 해제하여 메모리 누수를 막을 수 있음
 	Student* stu2 = new Student("박성한", 980330, 25, 0, "스포츠과학과 (야구)");
 	stu2->print();
 
 	delete stu2;
+	
+	// 단일 객체는 멤버를 "→" 로 접근
+	// 배열의 요소에 해당하는 객체는 멤버를 "." 으로 접근
+	Student* stu4 = new Student[6];
+	for (int i = 0; i < 6; i++) {
+		stu4[i].print();
+		printf("\n");
+	}
+	delete[] stu4;
 
 	return 0;
 }
