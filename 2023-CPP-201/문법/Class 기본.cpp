@@ -10,6 +10,8 @@ using namespace std;
 class Student {
 public:
 	// 생성자(constructor) : 객체가 생성될 때 호출되는 함수
+	// 생성자함수의 이름은 Class명과 같음
+	// 생성자는 반환형을 쓰지 않음
 	Student()
 	{
 		/*hakbun = 990111;
