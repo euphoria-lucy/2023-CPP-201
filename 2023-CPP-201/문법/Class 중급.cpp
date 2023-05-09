@@ -13,7 +13,7 @@ public:
 		c_str_ = new char[str_length + 1]; // '\0'(널문자) 공간 + 1
 		strcpy(c_str_, str);
 		cout << "MString 생성자 호출 완료" << endl;
-	}
+	} 
 
 	// 소멸자 (destructor)
 	~MString() {
@@ -30,15 +30,10 @@ private:
 };
 
 int main(void) {
-	// new로 동적할당한 공간은 반드시 delete로 해제시켜야 함
-	// 만약 그러지 않으면 메모리가 누수됨
-	MString* str = new MString("LIM SUNG-JIN");
-
-	cout << str->c_str() << endl;
-
-	// str에 대한 delete는 진행되었으나, str → c_str_에 대한 delete가 진행되지 않음
-	// TODO : 이를 delete 해주는 소멸자 (destructor) 구현하기
-	delete str;
+	
+	// 동적할당 → 정적할당
+	MString str1 = MString("KIM JUNG_MIN");
+	cout << str1.c_str() << endl;
 
 	
 	return 0;
