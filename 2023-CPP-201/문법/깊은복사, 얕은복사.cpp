@@ -8,17 +8,22 @@ int main(void) {
 	int* ptr1 = new int[3];
 	ptr1[0] = 3, ptr1[1] = 7, ptr1[2] = 65;
 
-	// ptr2 : 별도의 동적할당을 하지 않고 ptr1의 주소값만 복사함
-	// 이러한 복사를 얕은복사 (shallow copy)
-	int* ptr2 = ptr1; // 주소값만 복사함
+	// ptr2 : 별도의 공간을 동적할당한 후 ptr1이 가리키는 값을들 복사함
+	// 이러한 복사를 깊은복사(deep copy)
+	int* ptr2 = new int[3];
+	for (int i = 0; i < 3; i++) {
+		ptr2[i] = ptr1[i];
+	}
 
-	// 얕은 복사를 하면 원본 데이터에 종속됨
-	// 즉, ptr2[1]도 같이 바뀜
+	// 깊은 복사를 하면 고유의 공간을 가지므로 ptr2[1]은 4로 바뀌지 않게 됨
 	ptr1[1] = 4;
 
 	for (int i = 0; i < 3; i++) {
 		cout << ptr1[i] << " " << ptr2[i] << endl;
 	}
+
+	delete[] ptr1;
+	delete[] ptr2;
 
 	return 0;
 }
