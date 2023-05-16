@@ -13,12 +13,16 @@ public:
 		cout << "일반생성자 호출" << endl;
 	}
 
+	// 복사생성자 (얕은복사로 인하여 문제점 발생)
+	Munja(const Munja& m) : str_(m.str_) {
+		cout << "복사생성자 호출" << endl;
+	}
+
 	// 소멸자
 	~Munja() {
 		delete[] str_;
 		cout << "소멸자 호출" << endl;
 	}
-
 
 private:
 	char* str_;
@@ -26,6 +30,7 @@ private:
 
 int main(void) {
 
-	Munja m1 = Munja("KJM");
+	Munja m1 = Munja("KJM"); // 일반생성자 호출
+	Munja m2 = m1; // 복사생성자 호출
 
 }
