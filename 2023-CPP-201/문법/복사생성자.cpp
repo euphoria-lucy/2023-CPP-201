@@ -19,6 +19,7 @@ public:
 		cout << "¼Ò¸êÀÚ È£Ãâ" << endl;
 	}
 
+
 private:
 	char* str_;
 };
