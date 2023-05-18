@@ -5,6 +5,8 @@ using namespace sf;
 int main(void) {
 
 	RenderWindow window(VideoMode(640, 480), "Snake Game");
+	// 컴퓨터 사양이 달라도 똑같은 속도로 처리함
+	window.setFramerateLimit(60); // 1초에 (최대)60번의 작업이 이루어지도록 frame조절
 
 	RectangleShape snake;
 	snake.setPosition(200, 300);
