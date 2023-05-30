@@ -82,21 +82,35 @@ int main(void) {
 		}
 
 		// update
-		if (snake.dir_ == DIR_UP) {
-			snake.y_--;
-		}
-		else if (snake.dir_ == DIR_DOWN) {
-			snake.y_++;
-		}
-		else if (snake.dir_ == DIR_RIGHT) {
-			snake.x_++;
-		}
-		else if (snake.dir_ == DIR_LEFT) {
-			snake.x_--;
+
+		// 경계범위에 있을때
+		if (snake.x_ > 0 && snake.x_ < w && snake.y_ >= 0 && snake.y_ < h) {
+			// 뱀이 이동하는 코드
+			if (snake.dir_ == DIR_UP) {
+				snake.y_--;
+			}
+			else if (snake.dir_ == DIR_DOWN) {
+				snake.y_++;
+			}
+			else if (snake.dir_ == DIR_RIGHT) {
+				snake.x_++;
+			}
+			else if (snake.dir_ == DIR_LEFT) {
+				snake.x_--;
+			}
 		}
 
 		snake.sprite_.setPosition(snake.x_ * block, snake.y_ * block);
 
+		// 바운더리를 넘었을 때 더이상 벗어나지 않도록
+		if (snake.x_ < 0)
+			snake.x_ = 0;
+		if (snake.x_ >= w)
+			snake.x_ = w - 1;
+		if (snake.y_ < 0)
+			snake.y_ = 0;
+		if (snake.y_ >= w)
+			snake.y_ = h - 1;
 
 		// 뱀이 사과를 먹으면
 		if (snake.x_ == apple.x_ && snake.y_ == apple.y_) {
