@@ -44,8 +44,12 @@ private:
 
 int main(void) {
 
-	Rabbit* rabbit = new Rabbit(COLOR_RED, 3, 20); // 부모의 생성자도 호출
-	rabbit->Roar(); // 깡총깡총
-	delete rabbit;
+	Animal* animal = new Animal(COLOR_BLUE, 30);
+	animal->Roar(); // 동물 짖어
+	delete animal;
+
+	animal = new Rabbit(COLOR_RED, 3, 20);
+	animal->Roar(); // 동물 짖어 (C++은 호출할 멤버함수가 정적(컴파일시간)으로 결정)
+	delete animal;
 
 }
