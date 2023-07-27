@@ -1,4 +1,5 @@
-﻿#include <SFML/Graphics.hpp>
+﻿
+#include <SFML/Graphics.hpp>
 #include <stdlib.h>		// srand(), rand()
 #include <time.h>		// time()
 
@@ -152,6 +153,9 @@ int main(void)
 
 	srand(time(NULL));
 
+	sf::Clock clock; // SFML Clock 객체 생성
+	sf::Time elapsedTime; // 경과 시간을 저장할 SFML Time 객체
+
 	Font font;
 	if (!font.loadFromFile("C:\\Windows\\Fonts\\arial.ttf"))
 	{
@@ -165,10 +169,8 @@ int main(void)
 
 	char info_text[100];
 
-
 	Snake snake = Snake(DIR_DOWN, 1, 5.f, block);
 	snake.InitBody();
-
 
 	Apple apple;
 	apple.x_ = rand() % w;
@@ -187,7 +189,11 @@ int main(void)
 				window.close();
 		}
 
-		sprintf(info_text, "score : %d \n", snake.GetScore());
+		// 경과 시간 계산
+		elapsedTime = clock.getElapsedTime();
+		int seconds = elapsedTime.asSeconds();
+
+		sprintf(info_text, "score: %d  time: %d \n", snake.GetScore(), seconds);
 		info.setString(info_text);
 
 
