@@ -53,8 +53,20 @@ int main(void)
 	se1.setSize(Vector2f(40, 40));
 	se1.setFillColor(Color::Yellow);
 
+	RectangleShape se2;
+	se2.setPosition(rand() % 800, rand() % 600);
+	se2.setSize(Vector2f(60, 60));
+	se2.setFillColor(Color::Color(255, 209, 209));
+
+	RectangleShape se3;
+	se3.setPosition(rand() % 800, rand() % 600);
+	se3.setSize(Vector2f(20, 20));
+	se3.setFillColor(Color::Color(219, 196, 240));
+
 	Entity* player = new Entity(3, 5, &sp1);
 	Entity* ememy1 = new Entity(1, 3, &se1);
+	Entity* ememy2 = new Entity(1, 2, &se2);
+	Entity* ememy3 = new Entity(1, 4, &se3);
 
 	while (window.isOpen()) {
 		Event e;
@@ -87,7 +99,9 @@ int main(void)
 
 		window.clear();
 		window.draw(player->get_sprite());
-		window.draw(player->get_sprite());
+		window.draw(ememy1->get_sprite());
+		window.draw(ememy2->get_sprite());
+		window.draw(ememy3->get_sprite());
 
 		window.display();
 	}
