@@ -4,6 +4,7 @@
 using namespace std;
 
 int main() {
+	// 전통적인 배열은 크기가 고정되어 있으나, 
 	// 벡터는 크기가 자유롭게 변할 수 있는 동적배열
 	vector<int> arr;
 
