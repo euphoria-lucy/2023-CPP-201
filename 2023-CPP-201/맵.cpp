@@ -6,19 +6,18 @@ using namespace std;
 
 int main() {
 	
-	// key : ¹®ÀÚ¿­, value : Á¤¼ö
+	// key : ë¬¸ìì—´, value : ì •ìˆ˜
 	map<string, int> moving;
 
-	moving["¹Ú¼ºÇÑ"] = 1998;
-	moving["ÀÌÁ¤Çö"] = 2002;
-	moving["±èÁ¤¹Î"] = 2004;
+	moving["ë°•ì„±í•œ"] = 1998;
+	moving["ì´ì •í˜„"] = 2002;
+	moving["ê¹€ì •ë¯¼"] = 2004;
 
-	map<string, int>::iterator iter;
-
-	// mapÀº ¼ø¼­°¡ ¾ø±â ¶§¹®¿¡ iterator·Î¸¸ ¹İº¹¹®À» ÇØ¾ßÇÔ
+	// mapì€ ìˆœì„œê°€ ì—†ê¸° ë•Œë¬¸ì— iteratorë¡œë§Œ ë°˜ë³µë¬¸ì„ í•´ì•¼í•¨
 	// first : key, second : value
-	for (iter = moving.begin(); iter != moving.end(); iter++) {
-		cout << iter -> first << iter -> second << endl;
+	// autoëŠ” ì£¼ë¡œ ë³µì¡í•œ ìë£Œí˜•ì„ ëŒ€ì²´í•  ë•Œ ì‚¬ìš©í•œë‹¤
+	for (auto iter = moving.begin(); iter != moving.end(); iter++) {
+		cout << iter->first << iter->second << endl;
 	}
 
 }
