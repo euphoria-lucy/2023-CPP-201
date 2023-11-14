@@ -8,6 +8,7 @@ class Champ {
 public:
 	// 함수의 선언
 	Champ(const string& name);
+	static int get_cnt();
 private:
 	static int cnt_;
 };
@@ -17,6 +18,11 @@ Champ::Champ(const string& name) {
 	++cnt_;
 }
 
+int Champ::get_cnt() {
+	return cnt_;
+}
+
+// static 멤버변수는 모주곤 바깥에서 정의 (const는 제외)
 int Champ::cnt_ = 0;
 
 int main() {
@@ -26,4 +32,10 @@ int main() {
 	// Champ::cnt_의 값은 3
 	// cnt_ 변수는 모드가 공유하기 때문에 한 개만 존재하고
 	// Champ형 객체는 2개 있다
+
+	// 객체를 생성하지 않아도 static 멤버함수를 호출할 수 있다
+	cout << Champ::get_cnt() << endl;
+	// cout << a->Champ::get_cnt() << endl;
+	// cout << b->Champ::get_cnt() << endl;
+
 }
